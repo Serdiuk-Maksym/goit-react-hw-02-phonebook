@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
-import { ContactStyle, ButtonStyle } from './Contact.styled';
+import css from './Contact.module.css';
 
 export function Contact({ contact, onDelItem }) {
   const { name, number } = contact;
   return (
-    <ContactStyle>
+    <contact className={css.contact}>
       <p>
         {name} : {number}
       </p>
-      <ButtonStyle type="button" onClick={onDelItem}>
+      <button className={css.btn} type="button" onClick={onDelItem}>
         Delete
-      </ButtonStyle>
-    </ContactStyle>
+      </button>
+    </contact>
   );
 }
 
