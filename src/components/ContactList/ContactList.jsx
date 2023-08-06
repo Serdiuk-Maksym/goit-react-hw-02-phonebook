@@ -15,6 +15,6 @@ export function ContactList({ list, onDeleteItem }) {
 }
 
 ContactList.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.object),
-  onDelItem: PropTypes.func,
+  list: PropTypes.arrayOf(PropTypes.object.isRequired),
+  onDelItem: PropTypes.func.isRequired,
 };

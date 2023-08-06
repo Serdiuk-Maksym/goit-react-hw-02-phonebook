@@ -16,7 +16,11 @@ export class ContactForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    if (this.props.onSubmitHandler(this.state)) {
+
+    const { name, number } = this.state;
+    const lowercaseName = name.toLowerCase(); // Приведение имени к нижнему регистру
+
+    if (this.props.onSubmitHandler({ name: lowercaseName, number })) {
       this.setState({ name: '', number: '' });
     }
   };
@@ -59,5 +63,5 @@ export class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  onAlert: PropTypes.func,
+  onSubmitHandler: PropTypes.func,
 };

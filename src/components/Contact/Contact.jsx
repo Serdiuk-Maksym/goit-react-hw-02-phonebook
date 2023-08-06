@@ -17,8 +17,8 @@ export function Contact({ contact, onDelItem }) {
 
 Contact.propTypes = {
   contact: PropTypes.shape({
-    name: PropTypes.string,
-    number: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
   }),
-  onDelItem: PropTypes.func,
+  onDelItem: PropTypes.func.isRequired,
 };
